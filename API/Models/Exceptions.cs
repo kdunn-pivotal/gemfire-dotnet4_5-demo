@@ -1,52 +1,59 @@
 ﻿using System;
-namespace API.Models
-{
-  public class AddMemberException: Exception
-  {
-    public string ResourceReferenceProperty { get; set; }
- 
-	  public AddMemberException(){}
+namespace API.Models {
+    public class AddMemberException: Exception {
+        public string ResourceReferenceProperty {
+            get;
+            set;
+        }
 
-	  public AddMemberException(string message)
-	      : base(message){}
+        public AddMemberException() {}
 
-	  public AddMemberException(string message, Exception inner)
-	      : base(message, inner){}
-	}
-	public class GetMemberException : Exception
-	{
-		public string ResourceReferenceProperty { get; set; }
+        public AddMemberException(string message)
+        : base(message) {}
 
-		public GetMemberException() { }
+        public AddMemberException(string message, Exception inner)
+        : base(message, inner) {}
+    }
+    public class GetMemberException : Exception {
+        public string ResourceReferenceProperty {
+            get;
+            set;
+        }
 
-		public GetMemberException(string message)
-			: base(message) { }
+        public GetMemberException() { }
 
-		public GetMemberException(string message, Exception inner)
-			: base(message, inner) { }
-	}
-	public class RemoveMemberException : Exception
-	{
-		public string ResourceReferenceProperty { get; set; }
+        public GetMemberException(string message)
+        : base(message) { }
 
-		public RemoveMemberException() { }
+        public GetMemberException(string message, Exception inner)
+        : base(message, inner) { }
+    }
+    public class RemoveMemberException : Exception {
+        public string ResourceReferenceProperty {
+            get;
+            set;
+        }
 
-		public RemoveMemberException(string message)
-		  : base(message) { }
+        public RemoveMemberException() { }
 
-		public RemoveMemberException(string message, Exception inner)
-		  : base(message, inner) { }
-	}
-	public class UpdateMemberException : Exception
-	{
-		public string ResourceReferenceProperty { get; set; }
+        public RemoveMemberException(string message)
+        : base(message) { }
 
-		public UpdateMemberException() { }
+        public RemoveMemberException(string message, Exception inner)
+        : base(message, inner) { }
+    }
+    public class UpdateMemberException : Exception {
+        public string ResourceReferenceProperty {
+            get;
+            set;
+        }
 
-		public UpdateMemberException(string message)
-		  : base(message) { }
+        public UpdateMemberException() { }
 
-		public UpdateMemberException(string message, Exception inner)
-		  : base(message, inner) { }
-	}
+        public UpdateMemberException(string message)
+        : base(message) { }
+
+        public UpdateMemberException(string message, Exception inner)
+        : base(message, inner) { }
+    }
 }
