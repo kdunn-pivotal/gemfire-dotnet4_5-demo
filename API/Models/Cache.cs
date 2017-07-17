@@ -5,21 +5,21 @@ namespace API.Models {
     public static class Cache {
         private const string baseDir = @"C:\inetpub\wwwroot";
 
-        public static GemStone.GemFire.Cache.Generic.Cache Initalize() {
+        public static Apache.Geode.Client.Cache Initalize() {
             if (!File.Exists(baseDir + @"\cache.xml")) {
                 throw new FileNotFoundException();
             }
 
-            GemStone.GemFire.Cache.Generic.Properties<string, string> cacheProps = new GemStone.GemFire.Cache.Generic.Properties<string, string>();
+            Apache.Geode.Client.Properties<string, string> cacheProps = new Apache.Geode.Client.Properties<string, string>();
             cacheProps.Insert("cache-xml-file", baseDir + @"\cache.xml");
             cacheProps.Insert("log-level", "fine");
             cacheProps.Insert("log-file", @"c:\Logs\client.log");
             cacheProps.Insert("ssl-enabled", "true");
             cacheProps.Insert("ssl-truststore", baseDir + @"\certificatetruststore");
 
-            GemStone.GemFire.Cache.Generic.CacheFactory cacheFactory = GemStone.GemFire.Cache.Generic.CacheFactory.CreateCacheFactory(cacheProps);
+            Apache.Geode.Client.CacheFactory cacheFactory = Apache.Geode.Client.CacheFactory.CreateCacheFactory(cacheProps);
 
-            GemStone.GemFire.Cache.Generic.Cache cache = cacheFactory.Create();
+            Apache.Geode.Client.Cache cache = cacheFactory.Create();
 
             return cache;
         }

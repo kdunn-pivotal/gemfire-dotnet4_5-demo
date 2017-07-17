@@ -6,9 +6,9 @@ using System.Configuration;
 
 namespace API {
     public class Global : System.Web.HttpApplication {
-        private GemStone.GemFire.Cache.Generic.Cache cache;
+        private Apache.Geode.Client.Cache cache;
 
-        public static GemStone.GemFire.Cache.Generic.IRegion<string, string> region;
+        public static Apache.Geode.Client.IRegion<string, string> region;
 
         protected void Application_Start(object sender, EventArgs e) {
             if (!Environment.Is64BitOperatingSystem) {

@@ -11,7 +11,7 @@ namespace API.Models {
             set;
         }
 
-        public static Member Add(GemStone.GemFire.Cache.Generic.IRegion<string, string> region , Member member , bool exceptionOnExists = true) {
+        public static Member Add(Apache.Geode.Client.IRegion<string, string> region , Member member , bool exceptionOnExists = true) {
             if (region == null || member == null) {
                 throw new ArgumentNullException();
             }
@@ -34,7 +34,7 @@ namespace API.Models {
 
             return Get(region, member.email);
         }
-        public static Member Get(GemStone.GemFire.Cache.Generic.IRegion<string, string> region, string email) {
+        public static Member Get(Apache.Geode.Client.IRegion<string, string> region, string email) {
             if (region == null || string.IsNullOrEmpty(email)) {
                 throw new ArgumentNullException();
             }
@@ -59,7 +59,7 @@ namespace API.Models {
 
             return m;
         }
-        /*  public static void Remove(GemStone.GemFire.Cache.Generic.IRegion<string, string> region, string email){
+        public static void Remove(Apache.Geode.Client.IRegion<string, string> region, string email){
             if(region == null || string.IsNullOrEmpty(email)){
             throw new ArgumentNullException();
             }
@@ -77,7 +77,7 @@ namespace API.Models {
 
             return;
             }
-            public static void Update(GemStone.GemFire.Cache.Generic.IRegion<string, string> region, string email, Member member){
+            public static void Update(Apache.Geode.Client.IRegion<string, string> region, string email, Member member){
             if(region == null || string.IsNullOrEmpty(email) || member == null){
             throw new ArgumentNullException();
             }
@@ -94,7 +94,7 @@ namespace API.Models {
                 }
 
             return;
-            }*/
+            }
 
     }
 }
